@@ -1,3 +1,12 @@
-title: Arnon on Technology
-author: Arnon Erba
-theme: minima
+theme: "minima"
+title: "Arnon on Technology"
+defaults:
+  -
+    scope:
+      type: "posts"
+    values:
+      layout: "post"
+    scope:
+      path: ""
+    values:
+      author: "Arnon Erba"
