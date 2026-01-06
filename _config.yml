@@ -15,7 +15,7 @@ remote_theme: "jekyll/minima"
 minima:
   social_links:
     - title: "Follow me on GitHub"
-      icon: "GitHub"
+      icon: "github"
       url: "https://github.com/arnonerba"
   show_excerpts: "true"
 defaults:
