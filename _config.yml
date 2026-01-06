@@ -2,7 +2,7 @@ title: "Arnon on Technology"
 author:
   name: "Arnon Erba"
   email: "arnon at arnon erba dot com"
-description: "The assorted thoughts of a career sysadmin."
+description: "The assorted musings of a professional sysadmin. Content and opinions expressed here are my own."
 remote_theme: "jekyll/minima"
 permalink: "/:year/:month/:title"
 defaults:
