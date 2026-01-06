@@ -1,6 +1,5 @@
 ---
 title: "Starting Again"
-date: "2025-12-29"
 ---
 It's been a little under two years now since I took this site offline and embarked on one of my longest breaks from publishing since I started blogging back in 2012.
 

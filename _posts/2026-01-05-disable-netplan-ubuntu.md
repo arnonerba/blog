@@ -1,6 +1,5 @@
 ---
 title: "Non-Destructively Disabling Netplan on Ubuntu"
-date: "2026-01-05"
 ---
 Let's talk about disabling [Netplan](https://netplan.io/) on Ubuntu.
 
