@@ -1,6 +1,5 @@
 ---
 title: "Non-Destructively Disabling Netplan on Ubuntu"
-modified_date: "2026-01-06"
 ---
 [Netplan](https://netplan.io/) has been part of Ubuntu [for almost a decade now](https://ubuntu.com/blog/a-declarative-approach-to-linux-networking-with-netplan), and it's actually pretty good at its job, which is to provide a unified, human-readable interface for configuring either systemd-networkd (on Ubuntu Server) or NetworkManager (on Ubuntu Desktop). Let's be honest, manually configuring systemd-networkd isn't for the faint of heart, especially for more complex scenarios like bonding.
 
