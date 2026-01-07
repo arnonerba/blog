@@ -1,12 +1,12 @@
 ---
 title: "Non-Destructively Disabling Netplan on Ubuntu"
+modified_date: "2026-01-06"
 ---
 [Netplan](https://netplan.io/) has been part of Ubuntu [for almost a decade now](https://ubuntu.com/blog/a-declarative-approach-to-linux-networking-with-netplan), and it's actually pretty good at its job, which is to provide a unified, human-readable interface for configuring either systemd-networkd (on Ubuntu Server) or NetworkManager (on Ubuntu Desktop). Let's be honest, manually configuring systemd-networkd isn't for the faint of heart, especially for more complex scenarios like bonding.
 
 However: I don't need Netplan, because I can configure systemd-networkd directly [with Puppet](https://forge.puppet.com/modules/puppet/systemd) (or possibly [OpenVox](https://voxpupuli.org/openvox/) in the future). Netplan can play nice in this scenario, since it writes to `/run/systemd/network/` instead of `/etc/systemd/network/`, but I don't want it fighting with my configuration management tools over something as critical as network configuration.
 
 So, why not just purge Netplan with `apt purge netplan.io && apt autoremove`? Well, because doing so breaks the `ubuntu-minimal` metapackage:
-
 > This package [ubuntu-minimal] depends on all of the packages in the Ubuntu minimal system ... It is also used to help ensure proper upgrades, so it is recommended that it not be removed.
 
 Here's my compromise: Leave Netplan installed, but purge its config files. Fortunately, this is pretty simple. [According to the FAQ](https://netplan.io/faq), Netplan config files may exist in three different directories, in order of precedence:
