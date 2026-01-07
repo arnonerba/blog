@@ -38,7 +38,7 @@ On Linux, the proper destination for these files will likely be `~/ado/plus/p/`.
 
 ---
 
-**Bonus Section:** If you want to confirm whether the folder referenced in the error message is correct, you can find your local Stata's PLUS directory by running the `sysdir` command:
+**Bonus Section:** If you want to confirm whether the folder referenced in the error message is correct, you can find your local Stata PLUS directory by running the `sysdir` command:
 ```stata
 . sysdir
    STATA: /usr/local/stata17/
@@ -49,5 +49,5 @@ PERSONAL: ~/ado/personal/
 OLDPLACE: ~/ado/
 ```
 
-More info from the [Stata FAQ](https://www.stata.com/support/faqs/programming/personal-ado-directory/):
+More info about the PLUS directory from the [Stata FAQ](https://www.stata.com/support/faqs/programming/personal-ado-directory/):
 > PLUS is where Stata installs ado-files from the SJ and STB and ado-files that you have downloaded from the Internet through the help system or with the net command.
