@@ -33,6 +33,8 @@ On Linux, the proper destination for these files will likely be `~/ado/plus/p/`.
 
 **Note:** Make sure that the name of each pattern file starts with a capital "P" rather than a lowercase "p". The filenames may change to all lowercase when the ancillary files are downloaded. If that happens to you and you're running Linux, you can use the `rename` command as described in [this Ask Ubuntu post](https://askubuntu.com/questions/1069263/changing-first-letter-of-a-filename-to-uppercase) to quickly fix all the filenames at once.
 
+---
+
 **References:**
 - [Fuzzy match in Stata - Kai Chen](https://www.kaichen.work/?p=291)
 
