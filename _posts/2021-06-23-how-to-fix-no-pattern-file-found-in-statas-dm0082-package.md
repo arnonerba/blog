@@ -48,9 +48,9 @@ PERSONAL: ~/ado/personal/
 OLDPLACE: ~/ado/
 ```
 
-From the [Stata FAQ](https://www.stata.com/support/faqs/programming/personal-ado-directory/):
+More info from the [Stata FAQ](https://www.stata.com/support/faqs/programming/personal-ado-directory/):
 > PLUS is where Stata installs ado-files from the SJ and STB and ado-files that you have downloaded from the Internet through the help system or with the net command.
 
 **References:**
-- [Fuzzy match in Stata | Kai Chen](https://www.kaichen.work/?p=291)
+- [Fuzzy match in Stata - Kai Chen](https://www.kaichen.work/?p=291)
 
