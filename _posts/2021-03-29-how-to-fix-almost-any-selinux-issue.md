@@ -33,7 +33,7 @@ The `restorecon` tool was the solution to problems #1 and #2 from the list at th
 
 In most mainstream Linux distributions, the default SELinux policy is carefully crafted by a group of upstream maintainers. Creating a perfect one-size-fits-all policy is impossible, so the maintainers provide built-in policy exceptions in the form of SELinux booleans. SELinux booleans can be easily enabled or disabled to cover common use cases where the default SELinux policy falls short. If you have an SELinux problem that can't be fixed by restoring default file security contexts, you should check to see if an available SELinux boolean covers your use case.
 
-You can use `getsebool -a` to retrieve a list of available booleans on your system and then use [setsebool](https://linux.die.net/man/8/setsebool) to enable or disable them. Alternatively, you can use [semanage](https://linux.die.net/man/8/semanage) to see more detailed information about available booleans. Examples of SELinux booleans include:
+You can use [getsebool](https://linux.die.net/man/8/getsebool) to retrieve a list of available booleans on your system and then use [setsebool](https://linux.die.net/man/8/setsebool) to enable or disable them. Alternatively, you can use [semanage](https://linux.die.net/man/8/semanage) to see more detailed information about available booleans. Examples of SELinux booleans include:
 - `use_nfs_home_dirs`: Support NFS home directories.
 - `httpd_can_network_connect`: Allow HTTPD scripts and modules to connect to the network.
 - `ftpd_full_access`: Allow full filesystem access over FTP.
@@ -50,7 +50,7 @@ Alternatively, you can write and compile a custom SELinux policy module. This is
 
 ## The Audit Log
 
-By default, SELinux violations are usually logged to the audit log at `/var/log/audit/audit.log`. The best way to troubleshoot potential SELinux issues is to consult the audit log, but the default log format is not particularly user-friendly and raw entries are not always easy to understand. Instead of reading the audit log file directly, you can search the log with [ausearch](https://linux.die.net/man/8/ausearch) or generate comprehensive, human-readable reports from it with [sealert](https://linux.die.net/man/8/sealert). Additional resources for how to use those tools are provided at the bottom of this post.
+By default, SELinux violations are logged to the audit log, which is generally located at `/var/log/audit/audit.log`. The best way to troubleshoot potential SELinux issues is to consult the audit log, but the default log format is not particularly user-friendly and raw entries are not always easy to understand. Instead of reading the audit log file directly, you can search the log with [ausearch](https://linux.die.net/man/8/ausearch) or generate comprehensive, human-readable reports from it with [sealert](https://linux.die.net/man/8/sealert). Additional resources for how to use those tools are provided at the bottom of this post.
 
 ## Wrapping Up
 
@@ -63,7 +63,7 @@ That said, the default SELinux policy can't possibly cover all possible use case
 **References:**
 - [What is SELinux? - Red Hat](https://www.redhat.com/en/topics/linux/what-is-selinux)
 - [HowTos/SELinux - CentOS Wiki](https://wiki.centos.org/HowTos/SELinux)
-- [Getting started with SELinux :: Fedora Docs](https://docs.fedoraproject.org/en-US/quick-docs/getting-started-with-selinux/)
-- [Troubleshooting SELinux :: Fedora Docs](https://docs.fedoraproject.org/en-US/quick-docs/troubleshooting_selinux/)
+- [Getting started with SELinux :: Fedora Docs](https://docs.fedoraproject.org/en-US/quick-docs/selinux-getting-started/)
+- [Troubleshooting SELinux :: Fedora Docs](https://docs.fedoraproject.org/en-US/quick-docs/selinux-troubleshooting/)
 - [Basic SELinux Troubleshooting in CLI - Red Hat Customer Portal](https://access.redhat.com/articles/2191331)
-- [Using SELinux - Red Hat Enterprise Linux 8 | Red Hat Customer Portal](https://access.redhat.com/documentation/en-us/red_hat_enterprise_linux/8/html/using_selinux/index)
+- [Using SELinux - Red Hat Enterprise Linux 8 - Red Hat Customer Portal](https://docs.redhat.com/en/documentation/red_hat_enterprise_linux/8/html/using_selinux/index)
