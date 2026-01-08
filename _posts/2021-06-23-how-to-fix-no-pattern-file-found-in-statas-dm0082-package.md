@@ -1,6 +1,7 @@
 ---
 title: "How to Fix \"No Pattern File Found\" in Stata’s dm0082 Package"
 modified_date: "2026-01-06"
+last_modified_at: "2026-01-06"
 ---
 If you're using the [dm0082](https://www.stata-journal.com/article.html?article=dm0082) package in Stata, you may encounter the following error when using commands such as `stnd_compname`:
 ```

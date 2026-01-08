@@ -1,6 +1,7 @@
 ---
 title: "Bitdefender Antivirus Breaks RDP (Remote Desktop) on Windows"
 modified_date: "2026-01-07"
+last_modified_at: "2026-01-07"
 ---
 Update: This may have been fixed by now, but back in 2021, [the free edition of Bitdefender Antivirus](https://www.bitdefender.com/solutions/free.html) was interfering with Remote Desktop Protocol (RDP) connections on Windows. The remainder of this post has been preserved for posterity.
 

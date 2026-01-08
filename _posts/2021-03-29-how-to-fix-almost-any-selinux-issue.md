@@ -1,6 +1,7 @@
 ---
 title: "Troubleshooting SELinux Issues"
 modified_date: "2026-01-07"
+last_modified_at: "2026-01-07"
 ---
 SELinux has a well-earned reputation for being hard to use. It's infamous for causing strange, illogical faults that can't be fixed via normal troubleshooting routines, and, as a consequence, many guides and blog posts recommend disabling it outright. However, SELinux is a great way to secure and harden Linux systems, and with a few simple steps it's possible to fix most common problems you might encounter while using it.
 
