@@ -15,11 +15,12 @@ plugins:
   - "jekyll-sitemap"
 remote_theme: "jekyll/minima"
 minima:
+  skin: "auto"
+  show_excerpts: "true"
   social_links:
     - title: "Follow me on GitHub"
       icon: "github"
       url: "https://github.com/arnonerba"
-  show_excerpts: "true"
 defaults:
   -
     scope:
