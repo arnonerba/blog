@@ -8,7 +8,9 @@ On Windows and macOS, Stata can be configured to check for updates automatically
 If you're running Stata on a standalone Linux server or an HPC cluster, you may be interested in having Stata update itself without any user interaction. This is especially useful if Stata users do not have permission to update the software themselves, as is often the case on shared Linux systems.
 
 We can enable true automatic updates with a cron job and a Stata batch mode hack:
-> 0 0 * * 0 echo 'update all' | /usr/local/stata19/stata > /dev/null
+```
+0 0 * * 0 echo 'update all' | /usr/local/stata19/stata > /dev/null
+```
 
 Adding this line to root's crontab will cause the `update all` command to be run every Sunday at 12am. Standard output is piped to `/dev/null` to prevent cron from sending unnecessary emails.
 
