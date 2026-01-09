@@ -40,3 +40,4 @@ Unfortunately, Group Policy and other enterprise management tools do not always 
 - [Microsoft Search in Bing and Office 365 ProPlus - Microsoft Docs](https://docs.microsoft.com/en-us/deployoffice/microsoft-search-bing)
 - [Microsoft to force Chrome default search to Bing using Office 365 installer - The Verge](https://www.theverge.com/2020/1/22/21077280/microsoft-chrome-bing-extension-office-365-proplus-installer-default-search-engine)
 - [Microsoft to forcibly install Bing search extension in Chrome for Office 365 ProPlus users - ZDNet](https://www.zdnet.com/article/microsoft-to-forcibly-install-bing-search-extension-in-chrome-for-office-365-proplus-users/)
+- [Microsoft to Force Bing Search in Chrome for Office 365 ProPlus Users - BleepingComputer](https://www.bleepingcomputer.com/news/microsoft/microsoft-to-force-bing-search-in-chrome-for-office-365-proplus-users/)
