@@ -17,13 +17,12 @@ session optional pam_motd.so motd=/run/motd.dynamic
 session optional pam_motd.so noupdate
 ```
 
-Commenting out those lines in both files will prevent the `pam_motd.so` module from being loaded and will completely disable the dynamic MOTD.
+**Commenting out those lines in both files will prevent the `pam_motd.so` module from being loaded and will completely disable the dynamic MOTD.**
 
 ## Bonus Section: Enabling a Static MOTD
 
 If you still want a message printed when you log in via SSH, you can configure OpenSSH to display a traditional static MOTD. From the [man page for sshd_config](https://linux.die.net/man/5/sshd_config):
-> **PrintMotd**
-> Specifies whether **sshd** should print */etc/motd* when a user logs in interactively. (On some systems it is also printed by the shell, */etc/profile*, or equivalent.) The default is "yes".
+> **PrintMotd:** Specifies whether **sshd** should print */etc/motd* when a user logs in interactively. (On some systems it is also printed by the shell, */etc/profile*, or equivalent.) The default is "yes".
 
 Ubuntu disables this option by default and incorporates `/etc/motd` into its dynamic generator, but we can re-enable the option to make `/etc/motd` work again. Add or uncomment the following line in `/etc/ssh/sshd_config` and restart the OpenSSH daemon to have OpenSSH print `/etc/motd` on login:
 ```
