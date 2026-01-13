@@ -1,4 +1,15 @@
+// Custom styles for the jekyll/minima theme.
+
 hr {
   border: 0;
   border-bottom: 1px solid $border-color-01;
+}
+
+.post-list > li {
+  padding-top: 18px;
+  border-top: 1px solid $border-color-01;
+}
+
+.post-meta .bullet-divider {
+  padding-inline: 5px;
 }
