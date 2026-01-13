@@ -22,12 +22,15 @@ minima:
       icon: "github"
       url: "https://github.com/arnonerba"
 defaults:
-  -
-    scope:
+  - scope:
       type: "posts"
     values:
       layout: "post"
-    scope:
+  - scope:
+      path: "assets/images"
+    values:
+      image: "true"
+  - scope:
       path: ""
     values:
       author: "Arnon Erba"
