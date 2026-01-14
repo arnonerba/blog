@@ -1,5 +1,5 @@
 ---
-title: "How to use fixmbr in the Windows XP Recovery Console"
+title: "How to Use fixmbr in the Windows XP Recovery Console"
 ---
 The Windows XP Recovery Console is either an installable start-up option for a computer running Windows XP or a bootable program included with the Windows XP install disc. This tutorial details how to load the Recovery Console from the original Windows XP install disc.
 
