@@ -10,16 +10,28 @@ Anyway, here's an explanation - a detailed one - of how to boot into the Windows
 1. Find your original Windows XP install disc. Yes, you will need this if you can't boot your system.
 2. Set your computer's BIOS to boot from the CD, insert the CD, and boot from it. If you don't know how to do this, find your computer's documentation and look up how to access and use the BIOS.
 3. You should now see a "Press any key to boot from CD" message. Press any key.
+
     ![Windows XP fixmbr Step 1](/assets/images/fixmbr1.jpg)
+
 4. Now, a shockingly blue Windows Setup screen will open and start flashing text by on the bottom of it. Don't worry, this is not installing anything or overwriting anything. It's simply scanning your computer and loading the Windows XP setup program.
+
     ![Windows XP fixmbr Step 2](/assets/images/fixmbr2.jpg)
+
 5. Once Windows XP setup loads, press "R" to open the Recovery Console.
+
     ![Windows XP fixmbr Step 3](/assets/images/fixmbr3.jpg)
+
 6. You should now see a prompt asking you to select the Windows installation that you would like to log on to. If you don't see any options here, your system is ruined and is undetectable by the Recovery Console. If you do see option(s) here, type the NUMBER of the option (not the drive letter or something).
+
     ![Windows XP fixmbr Step 4](/assets/images/fixmbr4.jpg)
+
 7. You will be prompted for the administrator password. If you don't have one, just press Enter.
+
     ![Windows XP fixmbr Step 5](/assets/images/fixmbr5.jpg)
+
 8. Now you're in the Recovery Console! You can type `Help` for a list of available commands or type `Help commandname` to see options for a specific command.
+
     ![Windows XP fixmbr Step 6](/assets/images/fixmbr6.jpg)
+
 9. If you want to fix the master boot record, type in `fixmbr` with no switches and press Enter. The command shouldn't take long to run, and when it has finished type `EXIT` and press Enter. When the computer reboots, I would suggest you immediately enter the BIOS so that you can reset the boot menu and remove the CD. Otherwise, your computer will boot to a "Press any key to boot from CD..." message. Once you've finished with the boot menu, exit the BIOS and try to boot from the main hard drive.
 10. Hopefully, your Windows XP installation is now bootable. If it isn't, something beyond the scope of fixing the master boot record has gone wrong and you will need to take more drastic methods to recover your data. This could be removing the hard drive and hooking it up to another computer to see if the files are still accessible.
