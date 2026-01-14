@@ -1,7 +1,7 @@
 ---
 title: "How to use fixmbr in the Windows XP Recovery Console"
 ---
-The Windows XP Recovery Console is either an installable start-up option for a computer running Windows XP or a bootable media included with the Windows XP install disc. This tutorial details how to load the Recovery Console from the original Windows XP install disc.
+The Windows XP Recovery Console is either an installable start-up option for a computer running Windows XP or a bootable program included with the Windows XP install disc. This tutorial details how to load the Recovery Console from the original Windows XP install disc.
 
 The `fixmbr` command can be used in the Windows Recovery Console to re-install the default master boot record so that Windows can be successfully booted. For example, you will need to use this command to remove the Linux installation from a Windows/Linux dual-boot system. On a Windows/Linux dual boot, Linux overwrites the default Windows boot loader with Grub so that both operating systems can be booted from a start-up menu. However, if you remove Linux by simply deleting the Linux partitions, the files that contain Grub will be deleted and you will be greeted with a "Grub rescue" message when you try to boot your computer. Running the `fixmbr` command should solve this problem. Another reason to you would need to use `fixmbr` is if your master boot record has been corrupted for any reason and your system won't boot.
 
