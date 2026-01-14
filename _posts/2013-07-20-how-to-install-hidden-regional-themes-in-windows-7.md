@@ -1,7 +1,5 @@
 ---
 title: "How to Install Hidden Regional Themes in Windows 7"
-modified_date: "2021-01-10"
-last_modified_at: "2021-01-10"
 ---
 Windows 7 bases its default theme offerings off of which location you select during setup. Though there are multiple regional themes, only one of them is installed by default when you choose your location during setup. If you would like to install the other themes, here's how.
 
