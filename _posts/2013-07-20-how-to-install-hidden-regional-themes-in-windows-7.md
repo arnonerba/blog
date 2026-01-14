@@ -11,6 +11,7 @@ C:\Windows\Globalization\MCT
 ```
 
 A folder called MCT should open. In it, you will see five folders with country codes for Australia, Canada, Great Britain, the United States, and South Africa:
+
 ![Windows 7 MCT Folder](/assets/images/mct-folder.png)
 
 In each folder, you will find a number of subfolders. The subfolder with the country name contains the images for that region's theme, and the subfolder called "Theme" contains the installable themepack for that region's theme. Double-click on the themepack to install it.
