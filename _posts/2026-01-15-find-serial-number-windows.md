@@ -12,10 +12,13 @@ Get-CimInstance -ClassName Win32_BIOS | Select-Object SerialNumber
 
 That's the right way to do it if you're running this query in a script. However, if you're doing this by hand, that's a lot to remember and type, so I'd recommend using an abbreviated version instead:
 ```powershell
-(gcim win32_bios).serialnumber
+(gcim Win32_BIOS).SerialNumber
 ```
 
-You can also use `gcim win32_bios`, which returns more than just the serial number but is even easier to remember.
+You can also use the following version, which returns more than just the serial number but is even easier to remember:
+```powershell
+gcim win32_bios
+```
 
 **Note:** Some sources suggest using the `Get-WmiObject` cmdlet, but [that's deprecated too](https://learn.microsoft.com/en-us/powershell/scripting/learn/ps101/07-working-with-wmi).
 
