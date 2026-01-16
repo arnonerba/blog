@@ -29,4 +29,4 @@ This is hardcoded into my brain from years of manual Windows deployments, so eve
 wmic bios get serialnumber
 ```
 
-**Remember:** [wmic.exe is deprecated, and will eventually stop working](https://stackoverflow.com/q/57121875).
+**Remember:** [wmic.exe is deprecated and will eventually stop working](https://stackoverflow.com/q/57121875).
