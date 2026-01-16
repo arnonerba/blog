@@ -3,7 +3,7 @@ title: "Dell TPM 1.2 to 2.0 Upgrade Instructions"
 modified_date: "2026-01-15"
 last_modified_at: "2026-01-15"
 ---
-If you have a Dell PC that was manufactured between 2015 and 2018 and originally shipped with TPM firmware version 1.2, you may be able to upgrade it to TPM firmware version 2.0. Several Dell models are capable of switching between TPM firmware versions 1.2 and 2.0 provided the necessary conditions are met.
+If you have a Dell PC manufactured between 2015 and 2018 that originally shipped with TPM firmware version 1.2, you may be able to upgrade it to TPM firmware version 2.0. Several Dell models are capable of switching between TPM firmware versions 1.2 and 2.0 provided the necessary conditions are met.
 
 ## Prerequisites
 
