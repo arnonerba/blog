@@ -15,13 +15,13 @@ That's the right way to do it if you're running this query in a script. However,
 (gcim win32_bios).serialnumber
 ```
 
-You can also use `gcim win32_bios`, which returns a few extra BIOS properties besides the serial number, but is even easier to remember.
+You can also use `gcim win32_bios`, which returns more than just the serial number but is even easier to remember.
 
 **Note:** Some sources suggest using the `Get-WmiObject` cmdlet, but [that's deprecated too](https://learn.microsoft.com/en-us/powershell/scripting/learn/ps101/07-working-with-wmi).
 
 ## WMIC Method (Legacy)
 
-This is hardcoded into my brain from years of manual Windows deployments, so I'll include it here for posterity:
+This is hardcoded into my brain from years of manual Windows deployments, so even though it no longer works on recent Windows installations, I'll include it here for posterity:
 ```
 wmic bios get serialnumber
 ```
