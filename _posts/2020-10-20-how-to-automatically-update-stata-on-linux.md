@@ -1,5 +1,5 @@
 ---
-title: "Automatically Updating Stata on Linux with Cron"
+title: "Automatically Updating Stata on Linux With Cron"
 modified_date: "2026-01-08"
 last_modified_at: "2026-01-08"
 ---
