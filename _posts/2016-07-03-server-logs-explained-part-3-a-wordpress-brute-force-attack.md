@@ -18,7 +18,7 @@ As you would guess, when one computer makes hundreds of requests for a resource 
 203.0.113.42 - - [22/Jun/2016:19:19:00 -0700] "POST /wp-login.php HTTP/1.1" 429 0 "https://www.example.com/wp-login.php" "Mozilla/4.0 (compatible; MSIE 9.0; Windows NT 6.1; 125LA; .NET CLR 2.0.50727; .NET CLR 3.0.04506.648; .NET CLR 3.5.21022)"
 ```
 
-Here's a few reasons these requests that make it obvious that this is a brute-force attack:
+Here's a few reasons these requests make it obvious that this is a brute-force attack:
 1. They go on for about half an hour. The snippet above is only a small portion of the total logs from this incident.
 2. The HTTP method is `POST`, which indicates data is being sent to the server (i.e. the actual password guesses).
 3. The resource requested is `/wp-login.php`, which is the default WordPress login page and should rarely be requested, even by legitimate users.
@@ -31,7 +31,7 @@ Fortunately, WordPress brute-force attacks are not that difficult to defend agai
 1. Restrict access to the login page to a curated list of IP addresses,
 2. Explicitly block the IP addresses of known brute-force offenders with Nginx or with a firewall,
 3. Password-protect the login page using HTTP Basic Authentication,
-4. Or, my personal favorite: set up rate-limiting with Nginx to cut down on how many requests attackers can make in a certain period of time.
+4. Or, my personal favorite: Set up rate-limiting with Nginx to cut down on how many requests attackers can make in a certain period of time.
 
 ### Restricting Access to Certain IP Addresses
 
@@ -45,7 +45,7 @@ location = /wp-login.php {
 }
 ```
 
-This location block explicitly targets the `/wp-login.php` page and only allows clients using the IP addresses `192.168.1.2` and `192.168.1.50` to access it. All other requests will be met with a `403 Forbidden` error message. Keep in mind you will need to add your PHP fastcgi config to this location block as well so that Nginx knows to pass legitimate requests back to PHP. If you're not familiar with how to do this, either consult the Nginx docs regarding PHP or keep an eye out for a newer post.
+This location block explicitly targets the `/wp-login.php` page and only allows clients using the IP addresses `192.168.1.2` and `192.168.1.50` to access it. All other requests will be met with a `403 Forbidden` error message. Keep in mind you will still need to add your PHP fastcgi config to this location block as well so that Nginx knows to pass legitimate requests back to PHP.
 
 This method ensures that attackers will never get access to the login page, but is difficult to maintain if legitimate WordPress users do not have static IP addresses.
 
@@ -71,7 +71,7 @@ There are two steps to using HTTP Basic Auth with WordPress and Nginx:
 1. Create the password file.
 2. Configure Nginx.
 
-I am going to skip the first step in this post, as there are many good existing guides on using openssl or apache2-utils to create a password file.
+I am going to skip the first step in this post, as there are many good existing guides on using `openssl` or `apache2-utils` to create a password file.
 
 The second step, configuring Nginx, is fairly simple. Just add two lines to your wp-login location block:
 ```nginx
@@ -84,7 +84,7 @@ location = /wp-login.php {
 
 You can change "Restricted Content" to any phrase you want, as it will be the message that end-users see when they attempt to access the login page. Make sure you enter the correct path to your password file you created as well.
 
-While password-protecting the login page is a valid solution, it has the potential to overly complicate the login process for legitimate users.
+While password-protecting the login page is a valid solution, it does have the potential to overly complicate the login process for legitimate users.
 
 ### Using Rate Limiting in Nginx
 
@@ -118,4 +118,4 @@ This tells Nginx to limit requests to the `/wp-login.php` page using the paramet
 
 ## Conclusion
 
-This is by no means an exhaustive list for preventing brute-force attacks. Other solutions exist in the form of WordPress plugins or intrusion prevention systems such as Fail2ban. However, a lot can be accomplished by correctly configuring Nginx, and the fewer WordPress plugins you have installed, the better.
+This is by no means an exhaustive list for preventing WordPress brute-force attacks. Other solutions exist in the form of WordPress plugins or server-level intrusion prevention systems. However, a lot can be accomplished by correctly configuring Nginx, and the fewer WordPress plugins you have installed, the better.
