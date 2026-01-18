@@ -6,7 +6,7 @@ redirect_from:
   - "/2016/07/server-logs-explained-part-3"
   - "/2016/07/server-logs-explained-part-3-a-wordpress-brute-force-attack"
 ---
-There are a few different ways that crackers will try to get into your WordPress installation, and one of them is by using a plain old brute-force attack. This kind of attack requires nothing more than a freely available exploit toolkit, and is not difficult to detect in the server logs. In the first section of this post, I'm going to give an example of what a brute force attack looks like, and then to make things more interesting I'll discuss some techniques used to mitigate them using Nginx.
+There are a few different ways that crackers will try to get into your WordPress installation, and one of them is by using a plain old brute-force attack. This kind of attack requires nothing more than a freely available exploit toolkit and is not difficult to detect when reviewing server logs. In the first section of this post, I'm going to give an example of what a brute force attack looks like, and then to make things more interesting I'll discuss some techniques used to mitigate them using Nginx.
 
 ## Example Server Logs
 
