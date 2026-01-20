@@ -16,7 +16,7 @@ This could be due to an expired password.
 
 While an expired password or a server-side misconfiguration can cause this error, it may also indicate a client-side issue. In this case, the error appears to be caused by Bitdefender Antivirus replacing the remote computer's certificate in order to inspect encrypted RDP traffic. This process breaks Network Level Authentication and causes the connection to fail.
 
-## Solution: Add File-Level Exclusions for `mstsc`
+## Solution: Add File-Level Exclusions for mstsc
 
 One workaround is to add file-level exclusions in Bitdefender for both the 64-bit and 32-bit versions of the Windows RDP client:
 - `C:\Windows\system32\mstsc.exe`
