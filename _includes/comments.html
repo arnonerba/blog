@@ -1,18 +1,21 @@
-<script src="https://giscus.app/client.js"
-        data-repo="arnonerba/blog"
-        data-repo-id="R_kgDOQwxIaw"
-        data-category="Comments"
-        data-category-id="DIC_kwDOQwxIa84C1Tn2"
-        data-mapping="pathname"
-        data-strict="1"
-        data-reactions-enabled="1"
-        data-emit-metadata="0"
-        data-input-position="bottom"
-        data-theme="preferred_color_scheme"
-        data-lang="en"
-        crossorigin="anonymous"
-        async>
-</script>
-<noscript>
-  Please enable JavaScript to view the comments on this post.
-</noscript>
+{% assign giscus = site.giscus %}
+{% if giscus.repo %}
+  <script src="https://giscus.app/client.js"
+          data-repo={{ giscus.repo }}
+          data-repo-id={{ giscus.repo_id}}
+          data-category={{ giscus.category }}
+          data-category-id={{ giscus.category_id }}
+          data-mapping={{ giscus.mapping }}
+          data-strict={{ giscus.strict }}
+          data-reactions-enabled={{ giscus.reactions_enabled }}
+          data-emit-metadata={{ giscus.emit_metadata }}
+          data-input-position={{ giscus.input_position }}
+          data-theme={{ giscus.theme }}
+          data-lang={{ giscus.lang }}
+          crossorigin={{ giscus.crossorigin }}
+          async>
+  </script>
+  <noscript>
+    Please enable JavaScript to view the comments on this post.
+  </noscript>
+{% endif %}

@@ -21,6 +21,19 @@ minima:
     - title: "Follow me on GitHub"
       icon: "github"
       url: "https://github.com/arnonerba"
+giscus:
+  repo: "arnonerba/blog"
+  repo_id: "R_kgDOQwxIaw"
+  category: "Comments"
+  category_id: "DIC_kwDOQwxIa84C1Tn2"
+  mapping: "pathname"
+  strict: "1"
+  reactions_enabled: "1"
+  emit_metadata: "0"
+  input_position: "bottom"
+  theme: "preferred_color_scheme"
+  lang: "en"
+  crossorigin: "anonymous"
 defaults:
   - scope:
       type: "posts"
