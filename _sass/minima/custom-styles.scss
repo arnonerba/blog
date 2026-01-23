@@ -13,3 +13,8 @@ hr {
 .post-meta .bullet-divider {
   padding-inline: 5px;
 }
+
+.giscus {
+  padding: $spacing-unit 0;
+  border-top: 1px solid $border-color-01;
+}
