@@ -32,7 +32,7 @@ First, let's review some PAM basics. As described in the [man page for pam.d](ht
 
     > this module type is associated with doing things that need to be done for the user before/after they can be given service. Such things include the logging of information concerning the opening/closing of some data exchange with a user, mounting directories, etc.
 
-The PAM module for Duo Unix falls into the `auth` management group, so, for the purposes of this integration, that's the only applicable module type.
+The PAM module for Duo Unix falls into the `auth` management group, so, for the purposes of this post, that's the only relevant module type.
 
 ## Ubuntu's System-Wide PAM Configuration
 
@@ -43,7 +43,9 @@ Ubuntu provides five system-wide PAM configuration files in `/etc/pam.d` that co
 4. `/etc/pam.d/common-session`: Session-related modules common to all services.
 5. `/etc/pam.d/common-session-noninteractive`: Session-related modules common to all non-interactive services.
 
-These are the files that `pam-auth-update` manages. For context, our PAM profile for Duo Unix will only affect `/etc/pam.d/common-auth`. With all this in mind, we can move on to writing the profile.
+These are the files that `pam-auth-update` manages. For context, our PAM profile for Duo Unix will only affect `/etc/pam.d/common-auth`.
+
+With all this in mind, we can move on to writing the profile.
 
 ## Writing the PAM Profile
 
@@ -54,7 +56,7 @@ Default: no
 Priority: 128
 Auth-Type: Additional
 Auth:
-	required			/usr/lib64/security/pam_duo.so
+	required	/usr/lib64/security/pam_duo.so
 ```
 
 The table below describes what each individual field does and explains why I chose the options I did:
@@ -63,7 +65,7 @@ The table below describes what each individual field does and explains why I cho
 | ----- | ----------- | ------------- |
 | `Name` | A human-readable string that's displayed when `pam-auth-update` is run in interactive mode. | This can be anything that makes sense to you. |
 | `Default` | Whether the profile should be enabled by default. | For the purposes of this post, this is irrelevant, since we're not providing this profile as part of a package. |
-| `Priority` | Where to insert this module in the relevant system-wide PAM configuration file. Higher-priority modules will be listed earlier in the file. | I've chosen `128` based on the [framework spec page](https://wiki.ubuntu.com/PAMConfigFrameworkSpec) and on the choices made by other packages. **Note:** This value depends on the value of `Auth-Type` below, since priorities are evaluated separately for the `Primary` and `Additional` sections! |
+| `Priority` | Where to insert this module in the relevant system-wide PAM configuration file. Higher-priority modules will be listed earlier in the file. | I've chosen `128` based on the [framework spec page](https://wiki.ubuntu.com/PAMConfigFrameworkSpec) and on the choices made by other packages. <br><br> **Note:** This value depends on the value of `Auth-Type` below, since priorities are evaluated separately for the `Primary` and `Additional` sections! |
 | `Auth-Type` | This field supports two options, `Primary` and `Additional`, that correspond to separate sections in the aforementioned system-wide PAM configuration files. <br><br> The `Primary` section is intended for modules where the success of any one module indicates an overall success, such as when `pam_unix.so` and `pam_sss.so` are enabled simultaneously[^3]. <br><br> The `Additional` section is intended for modules that should run regardless of the success of other modules. | Based on this guidance, I've chosen to add Duo Unix as an "Additional" module, since it should only run after the primary authentication flow has completed. |
 | `Auth` | The desired PAM-API control, the name of the PAM module as found on disk, and any optional module arguments. | I'm using `required` here so that the PAM-API will deny access if Duo authentication fails but will still process the rest of the PAM stack first. (Other valid control values can be found in the [man page for pam.d](https://manpages.ubuntu.com/manpages/noble/en/man5/pam.d.5.html).) I've also included the canonical path to the module since it resides outside of PAM's normal search path on Ubuntu. |
 
@@ -114,7 +116,7 @@ In doing things this way, I'm breaking with Duo's official recommendation for Ub
 
 It's also worth mentioning that enabling Duo Unix in the manner described above should enable Duo for any authentication flow that relies on PAM's `common-auth` stack, including `sudo`. One notable exception to this rule is key-based authentication in SSH, which evidently [bypasses the PAM auth stack](https://serverfault.com/a/592591) entirely. Enabling Duo for SSH key authentication is outside the scope of this post[^4].
 
-Also, the legacy `login_duo` approach for enabling Duo Unix is outside the scope of this post. It relies on OpenSSH's `ForceCommand` directive and is nowhere near as robust as the PAM module.
+Also, the legacy `login_duo` approach for enabling Duo Unix[^5] is outside the scope of this post. It relies on OpenSSH's `ForceCommand` directive and is nowhere near as robust as the PAM module.
 
 ---
 
@@ -122,3 +124,4 @@ Also, the legacy `login_duo` approach for enabling Duo Unix is outside the scope
 [^2]: Those of you who are familiar with other distros may have noted that Fedora and its derivatives use [authselect](https://github.com/authselect/authselect) (which replaces the older `authconfig` utility) instead.
 [^3]: For example, this might be done to allow both local and domain accounts to log into a system.
 [^4]: **Hint:** This can be accomplished by editing the package-provided `sshd` PAM stack at `/etc/pam.d/sshd`, but this carries its own risks. Caveat emptor.
+[^5]: If you're curious, [here's the documentation](https://duo.com/docs/loginduo).
