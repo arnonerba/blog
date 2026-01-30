@@ -13,7 +13,9 @@ Here's my compromise: Leave Netplan installed, but purge its config files. Fortu
 2. `/etc/netplan/`
 3. `/lib/netplan/`
 
-The key is to run `netplan apply` after removing the relevant files from those directories. This removes Netplan's generated configuration from the network stack. **Note:** This is a disruptive action, so make sure you have an alternate network configuration ready to take over after Netplan lets go of the reins!
+The key is to run `netplan apply` after removing the relevant files from those directories. This removes Netplan's generated configuration from the network stack.
+
+**Note:** This is a disruptive action, so make sure you have an alternate network configuration ready to take over after Netplan lets go of the reins!
 
 All together, the whole process might look something like this:
 ```console
