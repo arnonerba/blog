@@ -5,8 +5,14 @@ title: "Non-Destructively Disabling Netplan on Ubuntu"
 
 However: I don't need Netplan, because I can configure systemd-networkd directly [with Puppet](https://forge.puppet.com/modules/puppet/systemd) (or possibly [OpenVox](https://voxpupuli.org/openvox/) in the future). Netplan can play nice in this scenario, since it writes to `/run/systemd/network/` instead of `/etc/systemd/network/`, but I don't want it fighting with my configuration management tools over something as critical as network configuration.
 
+## Problem: Metapackages
+
 So, why not just purge Netplan with `apt purge netplan.io && apt autoremove`? Well, because doing so breaks the `ubuntu-minimal` metapackage:
 > This package [ubuntu-minimal] depends on all of the packages in the Ubuntu minimal system ... It is also used to help ensure proper upgrades, so it is recommended that it not be removed.
+
+Ubuntu certainly won't stop you from doing this, but breaking metapackages is a great way to run into weird issues down the road.
+
+## Solution: Purge Config & Reapply
 
 Here's my compromise: Leave Netplan installed, but purge its config files. Fortunately, this is pretty simple. [According to the FAQ](https://netplan.io/faq), Netplan config files may exist in three different directories, in order of precedence:
 1. `/run/netplan/`
@@ -22,7 +28,9 @@ All together, the whole process might look something like this:
 $ sudo rm -f /run/netplan/*.yaml /etc/netplan/*.yaml /lib/netplan/*.yaml && sudo netplan apply
 ```
 
-Or, if you're a Puppet aficionado:
+## Example Puppet Code
+
+If you're a Puppet aficionado, here's one way to do this from inside a module:
 ```puppet
 file { '/etc/netplan/':
   ensure  => directory,
@@ -33,7 +41,7 @@ file { '/etc/netplan/':
   recurse => true,
   force   => true,
 } ~>
-exec { 'regenerate_netplan_config':
+exec { "${module_name}_regenerate_config":
   command     => 'netplan apply',
   path        => [ '/sbin', '/usr/sbin', '/bin', '/usr/bin' ],
   refreshonly => true,
