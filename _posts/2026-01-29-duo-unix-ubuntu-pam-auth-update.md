@@ -1,5 +1,5 @@
 ---
-title: "Enabling Duo Unix on Ubuntu With \"pam-auth-update\""
+title: "Enabling Duo Unix on Ubuntu With a PAM Profile & pam-auth-update"
 ---
 Enabling [Duo Unix](https://duo.com/docs/duounix) on Ubuntu involves integrating the `pam_duo` module into your system's [Pluggable Authentication Modules (PAM)](https://en.wikipedia.org/wiki/Pluggable_Authentication_Module) stack. This can be done by manually editing the files in `/etc/pam.d/`, but Ubuntu provides a safer way to do this in the form of `pam-auth-update` and its associated PAM config framework.
 
