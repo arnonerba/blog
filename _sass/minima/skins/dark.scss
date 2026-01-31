@@ -1,0 +1,113 @@
+@charset "utf-8";
+
+// Dark mode
+// ---------
+
+// Syntax highlighting styles should be adjusted appropriately for every "skin"
+// List of tokens: https://github.com/rouge-ruby/rouge/wiki/List-of-tokens
+
+@mixin highlight {
+  .highlight {
+    .err   { color: #e3d2d2; background-color: #8c2121 } // Error
+
+    .c     { color: #8a8a8a } // Comment
+    .c1    { color: #8a8a8a } // Comment.Single
+    .cm    { color: #8a8a8a } // Comment.Multiline
+    .cp    { color: #8a8a8a } // Comment.Preproc
+    .cs    { color: #8a8a8a; font-style: italic }  // Comment.Special
+
+    .gd    { color: #d85a5a } // Generic.Deleted
+    .gd .x { color: #d85a5a } // Generic.Deleted.Specific
+    .ge    { font-style: italic } // Generic.Emph
+    .gh    { color: #999999 } // Generic.Heading
+    .gi    { color: #4ec64e } // Generic.Inserted
+    .gi .x { color: #4ec64e } // Generic.Inserted.Specific
+    .go    { color: #888888 } // Generic.Output
+    .gp    { color: #555555 } // Generic.Prompt
+    .gr    { color: #f07178 } // Generic.Error
+    .gs    { font-weight: bold } // Generic.Strong
+    .gt    { color: #f07178 } // Generic.Traceback
+    .gu    { color: #aaaaaa } // Generic.Subheading
+
+    .k     { color: #d85a7b } // Keyword
+    .kc    { color: #d85a7b } // Keyword.Constant
+    .kd    { color: #d85a7b } // Keyword.Declaration
+    .kp    { color: #d85a7b } // Keyword.Pseudo
+    .kr    { color: #d85a7b } // Keyword.Reserved
+    .kt    { color: #ffcb6b } // Keyword.Type
+
+    .n     { color: #c7d1d8 }
+    .na    { color: #11a69f } // Name.Attribute
+    .nb    { color: #d85a7b } // Name.Builtin
+    .bp    { color: #999999 } // Name.Builtin.Pseudo
+    .nc    { color: #11a69f } // Name.Class
+    .ne    { color: #990000 } // Name.Exception
+    .nf    { color: #5ab780 } // Name.Function
+    .ni    { color: #11a69f } // Name.Entity
+    .nn    { color: #11a69f } // Name.Namespace
+    .no    { color: #9d99e6 } // Name.Constant
+    .nt    { color: #de3581 } // Name.Tag
+    .nv    { color: #9680b1 } // Name.Variable
+    .vc    { color: #9680b1 } // Name.Variable.Class
+    .vg    { color: #9680b1 } // Name.Variable.Global
+    .vi    { color: #9680b1 } // Name.Variable.Instance
+
+    .o     { color: #bcd890 } // Operator
+    .ow    { color: #bcd890 } // Operator.Word
+
+    .m     { color: #9d99e6 } // Literal.Number
+    .mf    { color: #9d99e6 } // Literal.Number.Float
+    .mh    { color: #9d99e6 } // Literal.Number.Hex
+    .mi    { color: #9d99e6 } // Literal.Number.Integer
+    .il    { color: #9d99e6 } // Literal.Number.Integer.Long
+    .mo    { color: #9d99e6 } // Literal.Number.Oct
+
+    .s     { color: #baa94a } // Literal.String
+    .s1    { color: #baa94a } // Literal.String.Single
+    .s2    { color: #baa94a } // Literal.String.Double
+    .sb    { color: #baa94a } // Literal.String.Backtick
+    .sc    { color: #baa94a } // Literal.String.Char
+    .sd    { color: #baa94a } // Literal.String.Doc
+    .se    { color: #baa94a } // Literal.String.Escape
+    .sh    { color: #baa94a } // Literal.String.Heredoc
+    .si    { color: #baa94a } // Literal.String.Interpol
+    .sr    { color: #009926 } // Literal.String.Regex
+    .ss    { color: #3c90f5 } // Literal.String.Symbol
+    .sx    { color: #baa94a } // Literal.String.Other
+
+    .w     { color: #eeffff } // Text.Whitespace
+
+    .lineno, .gl { color: #8a8a8a } // Line Number
+    .hll   { background-color: #373730 } // Marked-lines
+  }
+}
+
+// Dark skin (always dark mode)
+
+$brand-color:           #999999 !default;
+$brand-color-light:     lighten($brand-color, 5%) !default;
+$brand-color-dimmed:    darken($brand-color, 8%) !default;
+$brand-color-dark:      darken($brand-color, 43%) !default;
+
+$site-title-color:      $brand-color-light !default;
+
+$text-color:            #f0f6fc !default;
+$heading-color:          $text-color !default;
+$background-color:      #0c1116 !default;
+$code-background-color: #161b22 !default;
+
+$link-base-color:       #4493f8 !default;
+$link-visited-color:    lighten($link-base-color, 40%) !default;
+$link-hover-color:      $text-color !default;
+
+$border-color-01:       $brand-color-dark !default;
+$border-color-02:       $brand-color-light !default;
+$border-color-03:       $brand-color !default;
+
+$table-text-color:      $text-color !default;
+$table-zebra-color:     lighten($background-color, 4%) !default;
+$table-header-bg-color: lighten($background-color, 10%) !default;
+$table-header-border:   lighten($background-color, 15%) !default;
+$table-border-color:    $border-color-01 !default;
+
+@include highlight;

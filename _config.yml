@@ -15,7 +15,7 @@ plugins:
   - "jekyll-sitemap"
 remote_theme: "jekyll/minima"
 minima:
-  skin: "classic"
+  skin: "dark"
   show_excerpts: "true"
   social_links:
     - title: "Follow me on GitHub"
