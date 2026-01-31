@@ -31,7 +31,7 @@ giscus:
   reactions_enabled: "1"
   emit_metadata: "0"
   input_position: "bottom"
-  theme: "light"
+  theme: "dark"
   lang: "en"
   crossorigin: "anonymous"
 defaults:
