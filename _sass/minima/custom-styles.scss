@@ -5,6 +5,11 @@ hr {
   border-bottom: 1px solid $border-color-01;
 }
 
+.site-header {
+  background-color: $background-color-dark;
+  border-top: 0;
+}
+
 .post-list > li {
   padding-top: 18px;
   border-top: 1px solid $border-color-01;

@@ -93,6 +93,7 @@ $text-color:            #e6edf3 !default;
 $site-title-color:      $text-color !default;
 $heading-color:         $text-color !default;
 $background-color:      #0c1116 !default;
+$background-color-dark: #010409 !default;
 $code-background-color: #161b22 !default;
 
 $link-base-color:       #4493f8 !default;
@@ -105,7 +106,7 @@ $border-color-03:       $brand-color !default;
 
 $table-text-color:      $text-color !default;
 $table-zebra-color:     $code-background-color !default;
-$table-header-bg-color: $background-color !default;
+$table-header-bg-color: $background-color-dark !default;
 $table-header-border:   $border-color-01 !default;
 $table-border-color:    $border-color-01 !default;
 
