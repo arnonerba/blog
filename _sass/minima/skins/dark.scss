@@ -84,20 +84,19 @@
 
 // Dark skin (always dark mode)
 
-$brand-color:           #999999 !default;
-$brand-color-light:     lighten($brand-color, 5%) !default;
-$brand-color-dimmed:    darken($brand-color, 8%) !default;
-$brand-color-dark:      darken($brand-color, 43%) !default;
+$brand-color:           #9198a1 !default;
+$brand-color-light:     #979da6 !default;
+$brand-color-dimmed:    #848c96 !default;
+$brand-color-dark:      #30363d !default;
 
-$site-title-color:      $brand-color-light !default;
-
-$text-color:            #f0f6fc !default;
-$heading-color:          $text-color !default;
+$text-color:            #e6edf3 !default;
+$site-title-color:      $text-color !default;
+$heading-color:         $text-color !default;
 $background-color:      #0c1116 !default;
 $code-background-color: #161b22 !default;
 
 $link-base-color:       #4493f8 !default;
-$link-visited-color:    lighten($link-base-color, 40%) !default;
+$link-visited-color:    #7cb3fa !default;
 $link-hover-color:      $text-color !default;
 
 $border-color-01:       $brand-color-dark !default;
@@ -105,9 +104,9 @@ $border-color-02:       $brand-color-light !default;
 $border-color-03:       $brand-color !default;
 
 $table-text-color:      $text-color !default;
-$table-zebra-color:     lighten($background-color, 4%) !default;
-$table-header-bg-color: lighten($background-color, 10%) !default;
-$table-header-border:   lighten($background-color, 15%) !default;
+$table-zebra-color:     $code-background-color !default;
+$table-header-bg-color: $background-color !default;
+$table-header-border:   $border-color-01 !default;
 $table-border-color:    $border-color-01 !default;
 
 @include highlight;
