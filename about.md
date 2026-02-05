@@ -4,7 +4,7 @@ title: "About"
 ---
 ## About Me
 
-Hi, I'm {{ site.author.name }}.
+Hi! I'm {{ site.author.name }}.
 
 I'm a systems administrator with a passion for making technology work for people. I currently work for [UC Davis](https://www.ucdavis.edu/), where I specialize in research computing.
 
