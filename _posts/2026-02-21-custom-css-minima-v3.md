@@ -21,4 +21,4 @@ Minima v3 provides a built-in method for adding your own custom CSS. All you hav
 If you want to add Sass variables and mixins, there's a file for that, too: `_sass/minima/custom-variables.scss`.
 
 Here's an excerpt from the ["customizing templates" section of Minima's README](https://github.com/jekyll/minima?tab=readme-ov-file#customizing-templates) that explains exactly how these override files are meant to be used:
-> To have your CSS overrides in sync with upstream changes released in future versions, you can collect all your overrides for the Sass variables and mixins inside a sass file placed at \_sass/minima/custom-variables.scss and all other overrides inside a sass file placed at path \_sass/minima/custom-styles.scss.
+> To have your CSS overrides [remain] in sync with upstream changes released in future versions, you can collect all your overrides for the Sass variables and mixins inside a sass file placed at `_sass/minima/custom-variables.scss` and all other overrides inside a sass file placed at path `_sass/minima/custom-styles.scss`.
