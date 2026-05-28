@@ -1,13 +1,19 @@
 ---
 title: "Manually Installing OpenAI's Codex CLI Agent on Linux"
+modified_date: "2026-05-28"
+last_modified_at: "2026-05-28"
 ---
-OpenAI's current [official installation instructions for the Codex CLI](https://developers.openai.com/codex/cli#cli-setup) recommend using [npm](https://www.npmjs.com/) to install the agent on Linux. This is painless if you're already using npm, but if you're not, this introduces a ridiculous amount of dependency bloat for a tool that doesn't actually depend on Node.js.
+**Update:** OpenAI [has released a curl-based install script](https://github.com/openai/codex/commit/75b7e06621ac38c2b26a73832e797d49a7307f2b) for Codex CLI, so the instructions below are now deprecated. The native Linux installation methods for both Codex CLI and Claude Code are now effectively identical.
+
+---
+
+OpenAI's current [official installation instructions for Codex CLI](https://developers.openai.com/codex/cli#cli-setup) recommend using [npm](https://www.npmjs.com/) to install the agent on Linux. This is painless if you're already using npm, but if you're not, this introduces a ridiculous amount of dependency bloat for a tool that doesn't actually depend on Node.js.
 
 The solution to this problem, as referenced in the [README from the official GitHub repository](https://github.com/openai/codex?tab=readme-ov-file#installing-and-running-codex-cli), is to manually install the agent. OpenAI is shipping prebuilt binaries for a bunch of different platforms, so for a modern, mainstream Linux distribution this is as simple as downloading and extracting the correct `.tar.gz` file from GitHub.
 
 ## Sample Installation Script
 
-Since the official documentation for this installation method isn't particularly detailed, and since the Codex CLI doesn't seem to have a built-in update mechanism at the moment, I wrote a simple, proof-of-concept Bash script to automate the process of manually installing and updating the Codex CLI:
+Since the official documentation for this installation method isn't particularly detailed, and since Codex CLI doesn't seem to have a built-in update mechanism at the moment, I wrote a simple, proof-of-concept Bash script to automate the process of manually installing and updating Codex CLI:
 ```bash
 #!/bin/bash
 set -x
@@ -26,4 +32,4 @@ If demand for this installation method increases on our end, I may go back and a
 
 ## Closing Thoughts
 
-I'm surprised OpenAI doesn't already provide an official installation script for the Codex CLI, but I assume they will in the future. In contrast, Anthropic recommends their [script-based "native install" method](https://code.claude.com/docs/en/setup#install-claude-code) for Claude Code by default, and have already deprecated their npm installation method.
+I'm surprised OpenAI doesn't already provide an official installation script for Codex CLI, but I assume they will in the future. In contrast, Anthropic recommends their [script-based "native install" method](https://code.claude.com/docs/en/setup#install-claude-code) for Claude Code by default, and have already deprecated their npm installation method.
