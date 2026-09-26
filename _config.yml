@@ -23,7 +23,7 @@ minima:
       url: "https://github.com/arnonerba"
     - title: "Connect with me on LinkedIn"
       icon: "linkedin"
-      url: "https://www.linkedin.com/in/arnonerba/"
+      url: "https://www.linkedin.com/in/arnonerba"
 giscus:
   repo: "arnonerba/blog"
   repo_id: "R_kgDOQwxIaw"
